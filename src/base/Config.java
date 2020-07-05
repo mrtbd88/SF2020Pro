@@ -18,7 +18,8 @@ public class Config extends WebDriverFunction {
 	@BeforeMethod
 	public void beforeEachTestMethod(){
 		// Init the browser
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mahfuj Tuhin\\eclipse-workspace\\SF2020\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", (System.getProperty("user.dir")+"/drivers/chromedriver.exe"));
+
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
