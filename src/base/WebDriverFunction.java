@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class WebDriverFunction {
@@ -51,4 +52,27 @@ public class WebDriverFunction {
 		String exp = expValue; // exp is coming from Requirement or Mock-up
 		Assert.assertEquals(act, exp);
 	}
+	 public void DateAddHour () {
+	        Calendar calendar = Calendar.getInstance();
+	        System.out.println("Original = " + calendar.getTime());
+	 
+	        // Substract 2 hour from the current time
+	        calendar.add(Calendar.HOUR, -2);
+	 
+	        // Add 30 minutes to the calendar time
+	        calendar.add(Calendar.MINUTE, 30);
+	 
+	        // Add 300 seconds to the calendar time
+	        calendar.add(Calendar.SECOND, 300);
+	        System.out.println("Updated  = " + calendar.getTime());
+	}
+	 public void comparedateTime() {
+		    Calendar futureCal = Calendar.getInstance();
+		    futureCal.set(Calendar.YEAR, 3000);
+		    Calendar now = Calendar.getInstance();
+		    System.out.println("Current date : " + (now.get(Calendar.MONTH) + 1) + "-"
+		        + now.get(Calendar.DATE) + "-" + now.get(Calendar.YEAR));
+
+		    System.out.println("Is futureCal after now ? : " + futureCal.after(now));
+	 }
 }

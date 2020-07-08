@@ -31,14 +31,18 @@ public class Config extends WebDriverFunction {
 	
 	@AfterMethod
 	public void afterEachTestMethod(){
-		// close browser
-		//driver.close();
+		comparedateTime();
+		System.out.println("Comparing date and Time");
+       // close browser
+		driver.close();
 		System.out.println (" Test is ended and browser is closeded +++++++ ");
 	}
 	
 	@AfterSuite
 	public void tearDown(){
-		//driver.quit();
+		DateAddHour ();
+		System.out.println("I added time calculation, lets see what happened");
+		driver.quit();
 		System.out.println (" Terminated WD +++++++ ");
 	}
 
